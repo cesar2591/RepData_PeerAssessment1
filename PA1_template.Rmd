@@ -29,7 +29,9 @@ activity = read_csv(unz("activity.zip", "activity.csv"),
 ### Make a histogram of the total number of steps taken each day.
 ```{r histogram}
 activity %>%
-	na.omit() %>%	
+	na.omit() %>%
+    group_by(date) %>%
+    summarize(steps = sum(steps)) %>%
 	ggplot(aes(steps)) +
 	geom_histogram() +
     labs(title = "Histogram of the total number of steps taken each day",
@@ -42,8 +44,11 @@ activity %>%
 ```{r steps}
 activity %>%
 	na.omit() %>%
-	summarize(Mean = mean(steps),
-	          Median = median(steps))
+    group_by(date) %>%
+    summarize(steps = sum(steps)) %>%
+    ungroup()%>%
+    summarise(Mean = mean(steps),
+              Median = median(steps))
 ```
 
 ## What is the average daily activity pattern?

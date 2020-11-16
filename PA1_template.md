@@ -223,7 +223,7 @@ new.activity %>%
 
 ### Do these values differ from the estimates from the first part of the assignment?
 What is the impact of imputing missing data on the estimates of the total daily number of steps?
-Yes, they differ slightly from the first part of the assignment. After imputing missing data, the mean total number of steps taken per day decreased by 0.0174. The median total number of steps did not vary at all.
+No, they do not differ from the first part of the assignment.
 
 
 ```r
